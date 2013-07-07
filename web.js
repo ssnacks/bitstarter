@@ -4,7 +4,9 @@ var app = express.createServer(express.logger());
 
 fs.readFile('index.html', function (err, data) {
 	if (err) throw err;
-	response.send(data);
+	app.get('/', function(request, response) {
+	    response.send(data);
+	});
 });
 
 //app.get('/', function(request, response) {
